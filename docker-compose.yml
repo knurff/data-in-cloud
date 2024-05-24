@@ -20,6 +20,8 @@ services:
       - POSTGRES_USER=postgres
       - HOST_URL=host.docker.internal
 
+
+
   mongo:
     image: mongodb/mongodb-community-server:6.0-ubi8
     container_name: mongo
@@ -28,3 +30,13 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=user
       - MONGO_INITDB_ROOT_PASSWORD=password
+
+  RabbitMQ:
+    image: rabbitmq:3-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_VHOST: vhost
+      RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - "5672:5672"
+      - "15672:15672"

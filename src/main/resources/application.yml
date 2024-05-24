@@ -20,7 +20,11 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-
+  rabbitmq:
+    host: host.docker.internal
+    virtual-host: vhost
+    username: user
+    password: password
 
   mvc:
     pathmatch:
