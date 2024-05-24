@@ -5,12 +5,21 @@ spring:
     username: postgres
     password: password
 
+  data:
+    mongodb:
+      authenticationDatabase: admin
+      host: mongo
+      port: 27017
+      username: user
+      password: password
+
   jpa:
     hibernate:
       ddl-auto: create
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 
 
   mvc:
