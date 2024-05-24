@@ -19,3 +19,12 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
       - HOST_URL=host.docker.internal
+
+  mongo:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    container_name: mongo
+    ports:
+      - "27035:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
